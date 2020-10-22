@@ -22,7 +22,7 @@ def find_idea():
         else:
             chosen_element = choose_element(chosen_element)
     restart = input("Would you like to choose again? (If so, enter 'Y')")
-    if restart == "Y":
+    if restart.capitalize() == "Y":
         find_idea()
     
 def choose_element(name):
@@ -31,7 +31,7 @@ def choose_element(name):
     options_file.close()
 
     random_elements = []
-    number_of_options = int(min(max(3, len(options)/5), 8))
+    number_of_options = int(min(max(3, len(options)/3), 8))
 
     for i in range(number_of_options):
         random_element = options.pop(random.randint(0, len(options) - 1))
