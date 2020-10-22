@@ -1,8 +1,9 @@
 import random
 import os
 
-welcome_text = "Welcome to Drawing Idea Generator!\nPlease choose an option from the below:"
-os.chdir(r"C:\Users\j0she\Desktop\projects\Drawing Idea Generator\option_files")
+welcome_text = "Welcome to Drawing Idea Generator!"
+#print("Current working directory is: "+os.getcwd())
+os.chdir(r"./option_files")
 
 def start():
     print(welcome_text)
@@ -16,16 +17,21 @@ def find_idea():
         if chosen_element == None:
             chosen_element = choose_element("categories")
         if chosen_element[0] == "_":
-            chosen_element = choose_element(chosen_element)
+            chosen_element = choose_element(chosen_element, True)
             print
             end = True
         else:
             chosen_element = choose_element(chosen_element)
     restart = input("Would you like to choose again? (If so, enter 'Y')")
     if restart.capitalize() == "Y":
+        print(welcome_text)
         find_idea()
     
-def choose_element(name):
+def choose_element(name, end = False):
+    if end == True:
+        print("Please choose an idea from the below:")
+    else:
+        print("Please choose a category from the below:")
     options_file = open(name, "r")
     options = options_file.read().split(",")
     options_file.close()
