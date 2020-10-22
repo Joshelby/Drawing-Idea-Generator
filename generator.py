@@ -1,7 +1,7 @@
 import random
 import os
 
-welcome_text = "Welcome to Drawing Idea Generator!"
+welcome_text = "Welcome to Drawing Idea Generator!😃😃"
 #print("Current working directory is: "+os.getcwd())
 os.chdir(r"./option_files")
 
