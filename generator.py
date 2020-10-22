@@ -2,7 +2,7 @@ import random
 import os
 
 welcome_text = "Welcome to Drawing Idea Generator!\nPlease choose an option from the below:"
-os.chdir(r"C:\Users\j0she\Desktop\projects\Drawing Idea Generator")
+os.chdir(r"C:\Users\j0she\Desktop\projects\Drawing Idea Generator\option_files")
 
 def start():
     print(welcome_text)
